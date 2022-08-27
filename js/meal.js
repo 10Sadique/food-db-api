@@ -42,4 +42,4 @@ const searchFood = () => {
     searchField.value = ''
 }
 
-// loadMeals('a')
+loadMeals('a')
