@@ -5,6 +5,11 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <script src="https://cdn.tailwindcss.com"></script>
         <title>Food DB API</title>
+        <style>
+            .hide::-webkit-scrollbar {
+                display: none;
+            }
+        </style>
     </head>
     <body class="bg-zinc-900 text-gray-300">
         <header class="m-5 md:mx-16 my-5">
@@ -13,18 +18,37 @@
 
         <main class="m-5 md:mx-16">
             <section class="grid place-items-center mb-5">
-                <div class="w-full md:w-[500px] my-5 flex items-center justify-center relative">
-                    <input id="search-field" class="w-full py-2 px-5 rounded-lg bg-zinc-700" type="text" placeholder="Search Your Favourite Food">
-                    <button onclick="searchFood()" class="py-2 px-5 bg-purple-600 rounded-r-lg absolute right-0">Search</button>
+                <div
+                    class="w-full md:w-[500px] my-5 flex items-center justify-center relative"
+                >
+                    <input
+                        id="search-field"
+                        class="w-full py-2 px-5 rounded-lg bg-zinc-700"
+                        type="text"
+                        placeholder="Search Your Favourite Food"
+                    />
+                    <button
+                        onclick="searchFood()"
+                        class="py-2 px-5 bg-purple-600 rounded-r-lg absolute right-0"
+                    >
+                        Search
+                    </button>
                 </div>
             </section>
-            <section>
-                <div id="meal-container" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+
+            <section class="md:grid md:grid-cols-4 gap-6">
+                <div
+                    id="meal-container"
+                    class="h-screen overflow-y-scroll grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 col-span-3 hide"
+                ></div>
+                <div
+                    id="detail-container"
+                    class="bg-zinc-700 rounded-lg shadow-lg shadow-zinc-700/50 h-full"
+                >
 
                 </div>
             </section>
         </main>
-
 
         <script src="js/meal.js"></script>
     </body>
